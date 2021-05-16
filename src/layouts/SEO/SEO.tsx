@@ -1,29 +1,39 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Helmet} from "react-helmet";
+import {CommonPropsType} from "@src/configs";
+import {PageContext} from '@src/store';
+import {useSEO} from "@src/hooks";
 
-type SEOPropsType = {
-  children?: React.ReactNode
-}
+type SEOPropsType = Partial<Pick<CommonPropsType, 'children'>>
 
 export const SEO: React.VFC<SEOPropsType> = (
   {
     children
   }) => {
+  const {page} = useContext(PageContext);
+  const SEO = useSEO(page);
+
   return (
     <Helmet>
       <html lang="ja"/>
       <meta charSet="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta name="format-detection" content="telephone=no"/>
-      <title>タイトル</title>
-      <meta name="description" content="説明文"/>
+      <title>{SEO.title}</title>
+      <meta name="description" content={SEO.description}/>
       <meta property="og:type" content="website"/>
-      <meta property="og:locale" content="ja"/>
-      <meta property="og:url" content="{{ SEO::url().Page::path() }}"/>
-      <meta property="og:site_name" content="{{ SEO::name() }}"/>
-      <meta property="og:title" content="{{ SEO::title() }}"/>
-      <meta property="og:description" content="{{ SEO::description() }}"/>
-      <meta property="og:image" content="{{ SEO::image() }}"/>
+      <meta property="og:locale" content={SEO.locale}/>
+      <meta property="og:url" content={SEO.path}/>
+      <meta property="og:site_name" content={SEO.name}/>
+      <meta property="og:title" content={SEO.title}/>
+      <meta property="og:description" content={SEO.description}/>
+      <meta property="og:image" content={SEO.image}/>
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:title" content={SEO.title}/>
+      <meta name="twitter:url" content={SEO.url}/>
+      <meta name="twitter:description" content={SEO.description}/>
+      <meta name="twitter:image" content={SEO.image}/>
+      <meta name="twitter:image:alt" content={SEO.description}/>
       <script src="/assets/script/main.js" async={true}/>
       <link rel="stylesheet" href="/assets/styles/style.css"/>
       {children}

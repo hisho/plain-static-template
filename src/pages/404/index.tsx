@@ -4,9 +4,9 @@ import {Layout, SEO} from "@src/layouts";
 
 export default () => {
   return renderToStaticMarkup(
-    <Layout page_id="1">
+    <Layout page_id="999999">
       <SEO/>
-      index page
+      404 page
     </Layout>
   );
 };
