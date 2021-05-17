@@ -7,6 +7,7 @@ const mkdir = require('./.config/gulp/mkdir');
 //ファイルをクローンする
 const clone = require('./.config/gulp/clone');
 const image = require('./.config/gulp/image');
+const html = require('./.config/gulp/html');
 const sprite = require('./.config/gulp/svgSprite');
 //gulp本体
 const gulp = require('gulp');
@@ -15,6 +16,7 @@ const gulp = require('gulp');
 exports.clean = clean;
 exports.mkdir = mkdir;
 exports.clone = clone;
+exports.html = html;
 exports.image = image;
 exports.sprite = sprite;
 
