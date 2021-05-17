@@ -7,6 +7,8 @@ export default () => {
     <Layout page_id="1">
       <SEO/>
       index page
+      <button type="button">ボタン</button>
+      <div id="app" />
     </Layout>
   );
 };
