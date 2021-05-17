@@ -11,7 +11,7 @@ const html = (done) => {
       indent_size: 2,
       indent_char: ' ',
       preserve_newlines: false,
-      unformatted: ['code', 'pre', 'em', 'strong', 'script', 'i', 'b', 'br']
+      unformatted: ['code', 'pre', 'em', 'strong', 'i', 'b', 'br']
     }))
     .pipe(htmlHint({
       "tagname-lowercase": false,
