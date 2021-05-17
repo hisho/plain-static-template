@@ -1,5 +1,7 @@
-const webpack = require('webpack');
 const path = require('path');
+const webpack = require('webpack');
+//初期設定はsettings.jsにまとめる
+const Settings = require(path.resolve(__dirname, '.config/settings'));
 
 module.exports = () => {
   const MODE = process.env.NODE_ENV;
@@ -9,9 +11,7 @@ module.exports = () => {
   return {
     mode: MODE,
     devtool: IS_DEVELOPMENT ? 'inline-source-map' : false,
-    entry: {
-      "dist/assets/styles/style": "./src/styles/style",
-    },
+    entry: Settings.get('webpack').entries,
     resolve: {
       extensions: ['.ts', '.tsx', '.jsx', '.js', '.css'],
       alias: {

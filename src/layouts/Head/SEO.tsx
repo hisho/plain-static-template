@@ -34,7 +34,7 @@ export const SEO: React.VFC<SEOPropsType> = (
       <meta name="twitter:description" content={SEO.description}/>
       <meta name="twitter:image" content={SEO.image}/>
       <meta name="twitter:image:alt" content={SEO.description}/>
-      <script src="/assets/script/main.js" async={true}/>
+      <script src="/assets/scripts/main.js" async={true}/>
       <link rel="stylesheet" href="/assets/styles/style.css"/>
       {children}
     </Helmet>
