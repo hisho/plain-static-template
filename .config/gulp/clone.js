@@ -22,7 +22,6 @@ function getFileStat(path) {
 }
 
 const clone = (done) => {
-  console.log(Settings.get('clones'));
   Settings.get('clones').forEach((item) => {
     gulp.src(item.from)
       .pipe(
