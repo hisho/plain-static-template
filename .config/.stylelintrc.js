@@ -3,7 +3,8 @@ const path = require('path');
 //styleLintの除外するファイルの設定
 const IGNORE_FILES = [
   path.resolve(process.cwd(),'dist/**'),
-  path.resolve(process.cwd(),'src/styles/foundations/_reset.css')
+  path.resolve(process.cwd(),'src/styles/foundations/_reset.css'),
+  path.resolve(process.cwd(),'src/styles/utilities.css')
 ];
 
 

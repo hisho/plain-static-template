@@ -1,0 +1,51 @@
+/* utilities */
+
+/* ------------- */
+/* display none  */
+/* ------------- */
+.hidden {
+  display: none !important;
+}
+
+.xs\:hidden {
+  @media (--xs) {
+    display: none !important;
+  }
+}
+
+.sm\:hidden {
+  @media (--sm) {
+    display: none !important;
+  }
+}
+
+.md\:hidden {
+  @media (--md) {
+    display: none !important;
+  }
+}
+
+/* ------------- */
+/* display block */
+/* ------------- */
+.block {
+  display: none !important;
+}
+
+.xs\:block {
+  @media (--xs) {
+    display: none !important;
+  }
+}
+
+.sm\:block {
+  @media (--sm) {
+    display: none !important;
+  }
+}
+
+.md\:block {
+  @media (--md) {
+    display: none !important;
+  }
+}
