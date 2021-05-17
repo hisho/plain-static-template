@@ -1,0 +1,22 @@
+/* media query */
+@custom-media --xs (min-width: 640px);
+@custom-media --sm (min-width: 768px);
+@custom-media --md (min-width: 1024px);
+
+:root {
+  /* wrapper */
+  --wrapper-padding: 20px;
+  --wrapper-width: 1024px;
+
+  /* colors */
+  /* should hex to rgb */
+  --color-parimary-red: 255, 0, 0;
+
+  /* fonts */
+  --font-noto-sans: 'Noto Sans JP', sans-serif;
+
+  @media (--xs) {
+    /* wrapper */
+    --wrapper-padding: 40px;
+  }
+}

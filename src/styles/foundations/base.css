@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100%;
+  max-width: calc(var(--wrapper-width) + var(--wrapper-padding) * 2);
+  padding-right: var(--wrapper-padding);
+  padding-left: var(--wrapper-padding);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body {
+  font-family: var(--font-noto-sans);
+}
