@@ -15,7 +15,7 @@ export const SEO: React.VFC<SEOPropsType> = (
 
   return (
     <Helmet>
-      <html lang="ja"/>
+      <html lang={SEO.lang}/>
       <meta charSet="UTF-8"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <meta name="format-detection" content="telephone=no"/>
@@ -33,7 +33,6 @@ export const SEO: React.VFC<SEOPropsType> = (
       <meta name="twitter:url" content={SEO.url}/>
       <meta name="twitter:description" content={SEO.description}/>
       <meta name="twitter:image" content={SEO.image}/>
-      <meta name="twitter:image:alt" content={SEO.description}/>
       <script src="/assets/scripts/vendor/what-input.min.js" async={true}/>
       <script src="/assets/scripts/main.js" type="module"/>
       <link rel="stylesheet" href="/assets/styles/style.css"/>
