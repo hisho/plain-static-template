@@ -7,6 +7,8 @@ const mkdir = require('./.config/gulp/mkdir');
 //ファイルをクローンする
 const clone = require('./.config/gulp/clone');
 const image = require('./.config/gulp/image');
+//画像のpathとサイズのオブジェクトを生成する
+const generateImageConstant = require('./.config/gulp/generateImageConstant');
 const html = require('./.config/gulp/html');
 const sprite = require('./.config/gulp/svgSprite');
 //gulp本体
@@ -18,17 +20,25 @@ exports.mkdir = mkdir;
 exports.clone = clone;
 exports.html = html;
 exports.image = image;
+exports.generateImageConstant = generateImageConstant;
 exports.sprite = sprite;
 
 exports.watch = () => {
   Settings.get('clones').forEach((item) => {
     gulp.watch(item.from, clone);
   });
+
   gulp.watch([
     `${Settings.get('image').src}**/*.png`,
     `${Settings.get('image').src}**/*.jpg`,
     `${Settings.get('image').src}**/*.svg`,
   ], image);
+
+  gulp.watch([
+    `${Settings.get('image').src}**/*.png`,
+    `${Settings.get('image').src}**/*.jpg`,
+  ], generateImageConstant);
+
   gulp.watch([
     `${Settings.get('sprite').src}*.svg`,
   ], sprite);
