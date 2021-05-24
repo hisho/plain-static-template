@@ -72,7 +72,7 @@ export const Picture: VFC<PicturePropsType> = (
           height={desktopImage.height}
         />
       )}
-      <picture>
+      <picture data-Picure={""}>
         {mobileImage?.src && (
           <>
             <source

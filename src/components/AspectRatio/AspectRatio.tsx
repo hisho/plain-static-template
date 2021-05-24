@@ -17,7 +17,9 @@ export const AspectRatio: VFC<AspectRatioPropsType> = ({
 }) => {
   return (
     <div
+      data-AspectRatio={``}
       className={className}
+      aria-hidden={true}
       style={{ paddingTop: percentage(height / width) }}
     >
       {children}
