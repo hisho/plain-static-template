@@ -32,23 +32,23 @@
 /* display block */
 /* ------------- */
 .block {
-  display: none !important;
+  display: block !important;
 }
 
 .xs\:block {
   @media (--xs) {
-    display: none !important;
+    display: block !important;
   }
 }
 
 .sm\:block {
   @media (--sm) {
-    display: none !important;
+    display: block !important;
   }
 }
 
 .md\:block {
   @media (--md) {
-    display: none !important;
+    display: block !important;
   }
 }
