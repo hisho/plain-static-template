@@ -85,6 +85,7 @@ class Core {
       entries: {
         //common.css
         [this.config.get("css").dest + "style"]: this.config.get("css").src + "style",
+        [this.config.get("css").dest + "utilities"]: this.config.get("css").src + "utilities",
       },
       vendor: []
     });

@@ -36,6 +36,7 @@ export const SEO: React.VFC<SEOPropsType> = (
       <script src="/assets/scripts/vendor/what-input.min.js" async={true}/>
       <script src="/assets/scripts/main.js" type="module"/>
       <link rel="stylesheet" href="/assets/styles/style.css"/>
+      <link rel="stylesheet" href="/assets/styles/utilities.css"/>
       {children}
     </Helmet>
   )

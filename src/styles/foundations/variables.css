@@ -10,11 +10,15 @@
 
   /* colors */
   /* should hex to rgb */
+  /* color-{primary | secondary | tertiary}-{color name} */
+  /* @see https://tech-unlimited.com/color.html */
   --color-parimary-red: 255, 0, 0;
 
   /* fonts */
+  /* font-{name} */
   --font-noto-sans: 'Noto Sans JP', sans-serif;
 
+  /* more than xs */
   @media (--xs) {
     /* wrapper */
     --wrapper-padding: 40px;

@@ -17,19 +17,17 @@
 
 html {
   overflow-x: hidden;
-  font-feature-settings: 'palt';
+  /*font-feature-settings: 'palt';*/
   line-height: 1;
   letter-spacing: 0;
-  word-break: break-all;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   text-align: left;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
 a {
@@ -50,20 +48,27 @@ svg {
   overflow: hidden;
 }
 
-img, svg, video, canvas {
+img,
+svg,
+video,
+canvas {
   height: auto;
 }
 
-img, svg, video, canvas, audio, iframe, embed, object {
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
   display: block;
 }
 
-ul, ol {
-  list-style-type: none;
-}
-
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
+ul,
+ol {
+  list-style: none;
 }
 
 table {
@@ -71,7 +76,8 @@ table {
   border-collapse: collapse;
 }
 
-address, em {
+address,
+em {
   font-style: normal;
 }
 
@@ -92,11 +98,7 @@ button {
 }
 
 textarea {
-  resize: vertical;
-}
-
-select::-ms-expand {
-  display: none;
+  resize: none;
 }
 
 button,
@@ -114,11 +116,12 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  outline-offset: 2px;
 }
 
-/* disabledの時はカーソルをデフォルトにする */
+/* disabledの時はカーソルをnot allowにする */
 [disabled] {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 /* hiddenの時は表示しない */
