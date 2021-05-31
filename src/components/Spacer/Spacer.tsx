@@ -3,24 +3,22 @@ import { rem } from '@src/helper';
 import { CommonPropsType } from '@src/configs';
 
 type SpacerPropsType = Partial<Pick<CommonPropsType, 'className'>> & {
-  size: number;
+  size?: number | 'auto';
   style?: Omit<React.CSSProperties, 'height'>;
 };
 
 export const Spacer: React.VFC<SpacerPropsType> = ({
   className = '',
   style = {},
-  size,
+  size = 'auto',
 }) => {
   return (
     <span
+      data-spacer=""
       aria-hidden={true}
-      className={className}
+      className={`block pointer-events-none ${className}`}
       style={{
-        ...{
-          display: 'block',
-          height: rem(size),
-        },
+        height: size === 'auto' ? 'auto' : rem(size),
         ...style,
       }}
     />

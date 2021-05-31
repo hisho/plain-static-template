@@ -16,13 +16,14 @@ export const AspectRatio: VFC<AspectRatioPropsType> = ({
   height,
 }) => {
   return (
-    <div
-      data-AspectRatio={``}
+    <span
       className={className}
-      aria-hidden={true}
-      style={{ paddingTop: percentage(height / width) }}
+      style={{
+        display: 'block',
+        paddingTop: percentage(height / width)
+      }}
     >
       {children}
-    </div>
+    </span>
   );
 };

@@ -1,12 +1,9 @@
 import React, {VFC} from 'react';
 import {AspectRatio} from '@src/components';
-import {__IMAGES__} from "@src/configs/__generate__/images";
+import {breakpointsNamesType} from '@src/configs/variables';
 import {CommonPropsType} from '@src/configs';
-
-const breakpoints = {
-  xs: 640,
-  sm: 640
-} as const;
+import {useVariables} from "@src/hooks";
+import {__IMAGES__} from "@src/configs/__generate__/images";
 
 type PicturePropsType = Partial<Pick<CommonPropsType, 'className' | 'style'>> &
   Readonly<{
@@ -16,7 +13,7 @@ type PicturePropsType = Partial<Pick<CommonPropsType, 'className' | 'style'>> &
       desktop?: boolean;
       mobile?: boolean;
     };
-    breakpoint?: keyof typeof breakpoints;
+    breakpoint?: breakpointsNamesType;
     src: typeof __IMAGES__[number]['src'];
     alt?: string;
     backgroundColor?: string;
@@ -24,7 +21,7 @@ type PicturePropsType = Partial<Pick<CommonPropsType, 'className' | 'style'>> &
 
 export const Picture: VFC<PicturePropsType> = (
   {
-    breakpoint = 'xs',
+    breakpoint = 'sm',
     aspect = true,
     src,
     alt = '',
@@ -33,8 +30,9 @@ export const Picture: VFC<PicturePropsType> = (
     backgroundColor,
     ...others
   }) => {
+  const {breakpoints} = useVariables();
 
-  const currentBreakpoint = `(max-width: ${breakpoints[breakpoint] - 0.02}px)`;
+  const currentBreakpoint = `(max-width: ${(breakpoints[breakpoint] / 16) - 0.011}em)`;
   const desktopAspect = typeof aspect === 'boolean' ? aspect : aspect.desktop;
   const mobileAspect = typeof aspect === 'boolean' ? aspect : aspect.mobile;
 
@@ -44,7 +42,6 @@ export const Picture: VFC<PicturePropsType> = (
       <div>{src} is not exist</div>
     )
   }
-
   const desktopImage = imageObject.data.desktop;
   const mobileImage = imageObject.data.mobile;
 
@@ -67,7 +64,7 @@ export const Picture: VFC<PicturePropsType> = (
       )}
       {desktopAspect && (
         <AspectRatio
-          className={`hidden ${breakpoint}:block`}
+          className={mobileImage ? `hidden ${breakpoint}:block` : ''}
           width={desktopImage.width}
           height={desktopImage.height}
         />
