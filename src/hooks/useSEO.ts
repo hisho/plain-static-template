@@ -29,7 +29,8 @@ export const useSEO: useSEOFunctionType = ({
     : title + ' | ' + siteMetaData.name;
   const pageDescription = description ? description : siteMetaData.description;
   const pagePath = siteMetaData.siteUrl + path;
-  const pageOGPImage = siteMetaData.siteUrl + '/assets/images/' + image;
+  const pageOGPImage =
+    siteMetaData.siteUrl + 'assets/images/' + image;
 
   return {
     lang: siteMetaData.lang,
