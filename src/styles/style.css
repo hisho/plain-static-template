@@ -1,3 +1,3 @@
-@import 'foundations/reset.css';
+@import "@hisho/reset.css/reset.css";
 @import 'foundations/variables.css';
 @import 'foundations/base.css';
