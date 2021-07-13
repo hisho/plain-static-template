@@ -1,6 +1,6 @@
 import React from 'react';
-import {renderToStaticMarkup} from "@src/configs";
-import {Layout, SEO} from "@src/layouts";
+import { renderToStaticMarkup } from '@src/configs';
+import { Layout, SEO } from '@src/layouts';
 
 export default renderToStaticMarkup(
   <Layout page_id="1">
