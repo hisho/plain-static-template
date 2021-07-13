@@ -26,6 +26,6 @@ function myRenderToStaticMarkup(element: React.ReactElement): string {
   `;
 }
 
-export const renderToStaticMarkup = (element: React.ReactElement) => {
+export const renderPage = (element: React.ReactElement) => {
   return myRenderToStaticMarkup(element);
 };
