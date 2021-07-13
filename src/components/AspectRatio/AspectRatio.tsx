@@ -20,7 +20,7 @@ export const AspectRatio: VFC<AspectRatioPropsType> = ({
       className={className}
       style={{
         display: 'block',
-        paddingTop: percentage(height / width)
+        paddingTop: percentage(height / width),
       }}
     >
       {children}

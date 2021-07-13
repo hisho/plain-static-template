@@ -1,13 +1,13 @@
-import {renderToStaticMarkup as reactRenderToStaticMarkup} from 'react-dom/server';
-import React from "react";
-import {Helmet} from "react-helmet";
+import { renderToStaticMarkup as reactRenderToStaticMarkup } from 'react-dom/server';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function myRenderToStaticMarkup(element: React.ReactElement): string {
   const staticMarkup = reactRenderToStaticMarkup(element);
   const helmet = Helmet.renderStatic();
 
   function replaceDataHelmet(helmet: string) {
-    return helmet.replace(/data-react-helmet="true"/g, '')
+    return helmet.replace(/data-react-helmet="true"/g, '');
   }
 
   return `
@@ -27,5 +27,5 @@ function myRenderToStaticMarkup(element: React.ReactElement): string {
 }
 
 export const renderToStaticMarkup = (element: React.ReactElement) => {
-  return myRenderToStaticMarkup(element)
-}
+  return myRenderToStaticMarkup(element);
+};
